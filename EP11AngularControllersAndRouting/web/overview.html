@@ -1,0 +1,19 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="user in ctrl.users">
+            <td><img src="{{user.picture.thumbnail}}"/></td>
+            <td>{{user.first + " " + user.last}}</td>
+            <td><a href="#/detail/{{$index}}">Details</a></td>
+        </tr>
+    </tbody>
+
+</table>
+
+

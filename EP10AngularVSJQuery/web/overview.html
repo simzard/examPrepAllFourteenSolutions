@@ -1,0 +1,22 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Age</th>
+            <th>Eye color</th>
+            <th>Name</th>
+            <th>Friends</th>
+        </tr>                    
+    </thead>
+    <tbody>
+        <tr ng-repeat="person in ctrl.persons">
+            <td>{{person.id}}</td>
+            <td>{{person.age}}</td>
+            <td>{{person.eyeColor}}</td>
+            <td>{{person.name}}</td>
+            <td><a href="#/detail/{{$index}}">See friends</a></td>
+
+        </tr>
+    </tbody>
+</table>
+<a href='index.html'>Back</a>

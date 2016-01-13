@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>{{ctrl.studentsInfo.allCourses[0].courseName}}</th>
+            <th>{{ctrl.studentsInfo.allCourses[1].courseName}}</th>
+            <th>{{ctrl.studentsInfo.allCourses[2].courseName}}</th>
+            <th>Average</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="student in ctrl.studentsInfo.students">
+            <td>{{student.name}}</td>
+            <td>{{student.grades[0].grade}}</td>
+            <td>{{student.grades[1].grade}}</td>
+            <td>{{student.grades[2].grade}}</td>
+            <td>{{student.grades| average | number:2}}</td>
+        </tr>
+    </tbody>
+</table>

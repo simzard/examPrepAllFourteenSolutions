@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    </head>
+
+    <body>
+        <script>
+
+            
+            
+            $(document).ready(function () {
+                
+                $.ajax({
+                    url: "api/members",
+                    type: "GET",
+                    datatype: "json",
+                }).done(function (dataFromServer) {
+                    var persons = dataFromServer;
+                    
+                    for (var i = 0; i < persons.length; i++) {
+                        var row = $("<tr></tr>");
+                        var id = $("<td></td>").text(persons[i].id);
+                        var age = $("<td></td>").text(persons[i].age);
+                        var eyeColor = $("<td></td>").text(persons[i].eyeColor);
+                        var name = $("<td></td>").text(persons[i].name);
+                        
+                        // make friends string
+                        var friendsString = "";
+                        for (var j = 0; j < persons[i].friends.length; j++) {
+                            friendsString += persons[i].friends[j].name + ", ";
+                        }
+                        friendsString = friendsString.substring(0, friendsString.length - 2)
+                        
+                        var friends = $("<td></td>").text(friendsString);
+                                                
+                        row.append(id, age, eyeColor, name, friends);
+                        $("#personData").append(row);
+                    }
+
+                }).fail(function () {
+                    alert("wuuuupsidoodle");
+                });
+                
+                
+            })
+            
+        </script>
+        <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Age</th>
+                        <th>Eye color</th>
+                        <th>Name</th>
+                        <th>Friends</th>
+                    </tr>                    
+                </thead>
+                <tbody id="personData">
+                </tbody>
+            </table>
+        <a href='index.html'>Back</a>
+    </body>
+</html>

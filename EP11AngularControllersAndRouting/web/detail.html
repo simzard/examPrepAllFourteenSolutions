@@ -1,0 +1,58 @@
+<h2>Details for {{ctrl.user.first + " " + ctrl.user.last}}</h2>
+
+<table>
+    <tr>
+        <td>
+            <table class="table">
+                <tr>
+                    <td>Gender:</td>
+                    <td align="center">{{ctrl.user.gender}}</td>
+                </tr>
+                <tr>
+                    <td>First Name:</td>
+                    <td align="center">{{ctrl.user.first}}</td>
+                </tr>
+                <tr>
+                    <td>Last Name:</td>
+                    <td align="center">{{ctrl.user.last}}</td>
+                </tr>
+            </table>
+
+            <table class="table">
+                <tr>
+                    <td>Street:</td>
+                    <td align="center">{{ctrl.user.street}}</td>
+                </tr>
+                <tr>
+                    <td>City:</td>
+                    <td align="center">{{ctrl.user.city}}</td>
+                </tr>
+                <tr>
+                    <td>Zip:</td>
+                    <td align="center">{{ctrl.user.zip}}</td>
+                </tr>
+            </table>
+
+            <table class="table">
+                <tr>
+                    <td>Phone:</td>
+                    <td align="center">{{ctrl.user.phone}}</td>
+                </tr>
+                <tr>
+                    <td>Cell:</td>
+                    <td align="center">{{ctrl.user.cell}}</td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td align="center">{{ctrl.user.email}}</td>
+                </tr>
+            </table>
+        </td>
+        <td>
+            <img src="{{ctrl.user.picture.large}}"/>
+        </td>
+    </tr>
+</table>
+
+
+<a href="#/home" class="btn btn-primary"> < Back</a>

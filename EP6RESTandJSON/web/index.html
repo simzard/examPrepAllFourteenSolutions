@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>REST and JSON</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body ng-app="app" ng-controller="Controller as ctrl">
+        <div class="">
+            <form class="form">
+                <label>amount </label>
+                <input id="amount" type="number" value="5"/></br>
+                
+                <input id="fname" type="checkbox" name="fname" checked> fname <br>
+               
+                <input id="lname" type="checkbox" name="lname" checked> lname<br>
+                
+                <input id="street" type="checkbox" name="street" checked> street<br>
+                
+                <input id="city" type="checkbox" name="city" checked> city<br>
+                
+                <button ng-click="ctrl.getData()" type="button" >Show Table!</button>
+            </form>
+            
+            <table class="table">
+                <thead>
+                    <tr> 
+                        <th ng-repeat="(type,value) in ctrl.persons[0]">{{type}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="person in ctrl.persons"> 
+                        <td ng-repeat="(type,value) in person">{{value}}</td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+        
+        
+        
+    </body>
+</html>

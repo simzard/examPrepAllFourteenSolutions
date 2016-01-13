@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>SPA's with REST, JPA and AngularJS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+
+  <body ng-app="examDemo" ng-controller="Controller as ctrl">
+    <h2>Exam Exercise</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>Url</th>
+                <th ng-click="ctrl.order('review'); ctrl.reverse = !ctrl.reverse"><a href="">Review</a></th>
+                <th ng-click="ctrl.order('restaurentType'); ctrl.reverse = !ctrl.reverse"><a href="">Restaurant Type</a></th>
+                <th ng-click="ctrl.order('priceLevel'); ctrl.reverse = !ctrl.reverse"><a href="">Price Level</a></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="restaurant in ctrl.restaurants | orderBy:ctrl.predicate:ctrl.reverse">
+                
+                <td>{{restaurant.id}}</td>
+                <td>{{restaurant.name}}</td>
+                <td>{{restaurant.address}}</td>
+                <td>{{restaurant.phone}}</td>
+                <td>{{restaurant.url}}</td>
+                <td>{{restaurant.review | stars}}</td>
+                <td>{{restaurant.restaurentType}}</td>
+                <td>{{restaurant.priceLevel}}</td>
+            </tr>
+        </tbody>
+    </table>
+  </body>
+</html>
+ 
